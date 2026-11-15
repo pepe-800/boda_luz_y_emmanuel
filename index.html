@@ -895,9 +895,8 @@
         const CLIENT_EMAIL = "zelivereyesmartinez@gmail.com";
         const LIRA_OFFICIAL_EMAIL = "invitaciones.digitales.lira@gmail.com";
 
-        // URL DE GOOGLE APPS SCRIPT WEB APP
-        // (Pega aquí la URL de tu implementación web que termina en /exec)
-        const GOOGLE_SCRIPT_URL = ""; 
+        // URL DE GOOGLE APPS SCRIPT WEB APP VINCULADA
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz6O3HVBoFovQZQpp8bmxFOqVVxdbgY6trHvpx6tN124cBpXfZP8G8IviXVord_VlPY/exec"; 
 
         // ABRIR INVITACIÓN Y REPRODUCIR MÚSICA
         window.openInvitation = function() {
@@ -969,16 +968,16 @@
 
                 fetch(GOOGLE_SCRIPT_URL, {
                     method: "POST",
+                    mode: "no-cors",
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
                     body: params.toString()
                 })
-                .then(r => r.json().catch(() => ({ ok: true })))
-                .then(res => {
+                .then(() => {
                     btnEmail.disabled = false;
                     btnEmail.innerHTML = originalHtml;
-                    alert("¡Muchas gracias! Tu confirmación ha sido guardada en la lista oficial y notificada por correo a los novios.");
+                    alert("¡Muchas gracias! Tu confirmación ha sido registrada exitosamente en la lista oficial y notificada a los novios.");
                     document.getElementById('nombre').value = '';
                     document.getElementById('telefono').value = '';
                     document.getElementById('mensaje').value = '';
