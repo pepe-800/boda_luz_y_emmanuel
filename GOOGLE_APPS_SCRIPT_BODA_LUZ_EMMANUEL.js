@@ -26,7 +26,7 @@
 /** ====== CONFIGURACIÓN ====== */
 var CFG = {
   // ID de tu hoja de cálculo en Google Drive
-  spreadsheetId: "PEGA_AQUI_EL_ID_DE_TU_GOOGLE_SHEET",
+  spreadsheetId: "1UyAKc_Z8U9dgKgMh3NM50pcNgyYqAaZm08sQzGVukCU",
 
   // Nombre de la pestaña donde se guardarán las confirmaciones
   sheetName: "Confirmaciones",
