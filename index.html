@@ -18,9 +18,9 @@
         /* ================================================================== */      
 
         :root {
-            --color-espacio: #080c14; /* Fondo místico nocturno profundo */
-            --color-card: rgba(13, 20, 32, 0.92);
-            --color-card-border: rgba(229, 195, 101, 0.4);
+            --color-espacio: #0b1528; /* Azul noche profundo idéntico a Karime */
+            --color-card-bg: rgba(11, 21, 40, 0.4); /* Transparencia exacta a Karime (0.4) */
+            --color-card-border: rgba(229, 195, 101, 0.35);
             --color-gold: #e5c365;    /* Dorado élfico luminoso */
             --color-gold-hover: #ffd978;
             --color-silver: #d1d8e0;  /* Plateado Mithril */
@@ -63,17 +63,17 @@
             z-index: 2; 
         }
 
-        .shadow-text { text-shadow: 0 2px 8px rgba(0,0,0,0.85); }
-        .glow-text-gold { text-shadow: 0 0 14px rgba(229, 195, 101, 0.55); }
+        .shadow-text { text-shadow: 0 2px 10px rgba(0,0,0,0.85); }
+        .glow-text-gold { text-shadow: 0 0 14px rgba(229, 195, 101, 0.6); }
         
         /* BOTONES ELEGANTES */
         .btn {
             display: inline-block;
             padding: 13px 30px;
             border-radius: 50px;
-            border: 1.5px solid var(--primary);
+            border: 1px solid var(--primary);
             color: var(--white);
-            background: rgba(13, 20, 32, 0.85);
+            background: rgba(11, 21, 40, 0.7);
             text-decoration: none;
             font-family: var(--font-subepic);
             font-size: 0.85rem;
@@ -81,20 +81,20 @@
             text-transform: uppercase;
             transition: all 0.35s ease;
             cursor: pointer;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 18px rgba(0,0,0,0.4);
             backdrop-filter: blur(4px);
         }
 
         .btn:hover {
             background: var(--primary);
-            color: #0b1424;
+            color: #0b1528;
             box-shadow: 0 0 25px rgba(229, 195, 101, 0.7);
             transform: translateY(-3px);
             font-weight: 700;
         }
 
         .btn-amazon {
-            background: linear-gradient(135deg, #232F3E, #131921);
+            background: linear-gradient(135deg, rgba(35, 47, 62, 0.8), rgba(19, 25, 33, 0.9));
             border-color: #FF9900;
             color: #FF9900;
         }
@@ -105,18 +105,18 @@
         }
 
         .btn-whatsapp {
-            background: rgba(37, 211, 102, 0.2);
+            background: rgba(37, 211, 102, 0.25);
             border-color: #25D366;
             color: #fff;
         }
         .btn-whatsapp:hover {
             background: #25D366;
-            color: #090e17;
+            color: #0b1528;
             box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
         }
 
         .btn-email {
-            background: rgba(66, 133, 244, 0.2);
+            background: rgba(66, 133, 244, 0.25);
             border-color: #4285F4;
             color: #fff;
         }
@@ -142,12 +142,13 @@
             transition: background 0.4s ease;
         }
         
+        /* VELO OSCURO IDÉNTICO A KARIME (rgba(11, 21, 40, 0.65)) */
         .veil {
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at center, rgba(8, 12, 20, 0.75) 0%, rgba(4, 6, 10, 0.92) 100%);
+            background: rgba(11, 21, 40, 0.65);
             z-index: 1;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.35s ease;
         }
 
         /* MODO VER SOLO IMAGEN (AL TOCAR LA HOJA) */
@@ -194,13 +195,13 @@
             padding: 16px 16px 14px;
             border: 1px solid rgba(229, 195, 101, 0.65);
             border-radius: 16px;
-            background: linear-gradient(180deg, rgba(13, 20, 32, 0.96), rgba(8, 12, 20, 0.92));
+            background: linear-gradient(180deg, rgba(11, 21, 40, 0.92), rgba(11, 21, 40, 0.82));
             color: var(--white);
             transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
             pointer-events: auto;
             animation: tapHintIn 0.7s ease both;
             transform: translateX(-50%);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
             text-align: center;
         }
 
@@ -236,7 +237,7 @@
             border: 1px solid var(--color-gold);
             border-radius: 999px;
             padding: 8px 22px;
-            color: #080c14;
+            color: #0b1528;
             background: var(--color-gold);
             font-family: var(--font-subepic);
             font-size: 0.75rem;
@@ -279,7 +280,7 @@
         #cover .overlay {
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at center, rgba(8,12,20,0.65) 0%, rgba(4,6,10,0.92) 100%);
+            background: radial-gradient(ellipse at center, rgba(11,21,40,0.65) 0%, rgba(5,10,20,0.92) 100%);
         }
         #cover .content {
             position: relative;
@@ -298,20 +299,20 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: rgba(13, 20, 32, 0.9);
+            background: rgba(11, 21, 40, 0.7);
             border: 2px solid var(--color-gold);
             color: var(--color-gold);
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             transition: all 0.3s;
         }
         .music-toggle:hover {
             transform: scale(1.1);
             background: var(--color-gold);
-            color: #080c14;
+            color: #0b1528;
         }
         .music-toggle.playing i {
             animation: spinMusic 4s linear infinite;
@@ -321,38 +322,40 @@
             to { transform: rotate(360deg); }
         }
 
-        /* TARJETAS DE CONTENIDO */
-        .card-main {
-            background: var(--color-card);
+        /* TARJETAS DE CONTENIDO: TRANSPARENCIA EXACTA A KARIME (rgba(11, 21, 40, 0.4)) */
+        .story-card, .venue-details, .rsvp-card, .card-main {
+            background: var(--color-card-bg);
             border: 1px solid var(--color-card-border);
             border-radius: 20px;
-            padding: 45px 35px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(12px);
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
             margin: 0 auto;
             position: relative;
+            z-index: 5;
         }
-        .card-main::before {
+        .story-card::before, .venue-details::before, .rsvp-card::before, .card-main::before {
             content: "✦";
             position: absolute;
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
             color: var(--color-gold);
-            font-size: 1.2rem;
-            background: #080c14;
+            font-size: 1.1rem;
+            background: #0b1528;
             padding: 0 12px;
         }
 
-        /* HERO SECCIÓN */
+        /* HERO SECCIÓN (TEXTOS DIRECTOS FLOTANDO SOBRE LA HOJA COMO EN KARIME) */
         .hero-names {
             font-family: var(--font-epic);
-            font-size: 2.8rem;
+            font-size: clamp(2.4rem, 6vw, 3.8rem);
             color: var(--white);
             letter-spacing: 3px;
             line-height: 1.2;
             margin: 15px 0;
-            text-shadow: 0 0 20px rgba(229, 195, 101, 0.5);
+            text-shadow: 0 0 25px rgba(229, 195, 101, 0.55), 0 3px 10px rgba(0,0,0,0.8);
         }
         .hero-date {
             font-family: var(--font-subepic);
@@ -363,7 +366,7 @@
         }
         .hero-adventure {
             font-family: var(--font-script);
-            font-size: 2.4rem;
+            font-size: 2.5rem;
             color: var(--color-silver);
             margin-top: 15px;
         }
@@ -400,7 +403,7 @@
             margin: 25px auto;
         }
         .cd-box {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(229, 195, 101, 0.4);
             border-radius: 14px;
             padding: 15px 8px;
@@ -431,7 +434,7 @@
             margin: 20px 0;
             padding: 15px;
             border-radius: 12px;
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.03);
         }
         .venue-box h3 {
             font-family: var(--font-script);
@@ -487,7 +490,7 @@
             letter-spacing: 1px;
             color: var(--color-gold);
             font-family: var(--font-subepic);
-            background: #0a0f1a;
+            background: #0b1528;
         }
 
         /* MESA DE REGALOS */
@@ -518,7 +521,7 @@
         }
 
         /* FORMULARIO RSVP */
-        .rsvp-card { max-width: 580px; }
+        .rsvp-card { max-width: 600px; }
         .rsvp-input {
             width: 100%;
             padding: 14px 18px;
@@ -582,7 +585,7 @@
         .lightbox {
             position: fixed;
             inset: 0;
-            background: rgba(5, 8, 14, 0.95);
+            background: rgba(5, 10, 20, 0.95);
             z-index: 2000;
             display: none;
             justify-content: center;
@@ -609,7 +612,7 @@
 
         /* FOOTER */
         footer {
-            background: #05080e;
+            background: #050a14;
             padding: 40px 20px;
             text-align: center;
             color: #7a889b;
@@ -660,18 +663,16 @@
         <source src="musica.m4a" type="audio/mp4">
     </audio>
 
-    <!-- 1. HERO / PRESENTACIÓN (FONDO: SECCIÓN 1) -->
+    <!-- 1. HERO / PRESENTACIÓN (FONDO: SECCIÓN 1 - TEXTOS FLOTANTES SOBRE EL VELO) -->
     <section id="hero" class="sheet" style="background-image: url('seccion_1_hero.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
-            <div class="card-main" style="max-width: 740px;">
-                <p style="font-family: var(--font-subepic); letter-spacing: 4px; color: var(--color-silver); font-size: 0.85rem; margin-bottom: 10px;">
-                    CON LA BENDICIÓN DE DIOS Y NUESTRAS FAMILIAS
-                </p>
-                <h1 class="hero-names">Luz Andrea<br>&<br>Angel Emmanuel</h1>
-                <div class="hero-date glow-text-gold">SÁBADO 13 DE NOVIEMBRE 2027</div>
-                <div class="hero-adventure">"De hecho... una aventura inesperada"</div>
-            </div>
+            <p class="shadow-text" style="font-family: var(--font-subepic); letter-spacing: 4px; color: var(--color-silver); font-size: 0.95rem; margin-bottom: 10px;">
+                CON LA BENDICIÓN DE DIOS Y NUESTRAS FAMILIAS
+            </p>
+            <h1 class="hero-names shadow-text">Luz Andrea<br>&<br>Angel Emmanuel</h1>
+            <div class="hero-date glow-text-gold shadow-text">SÁBADO 13 DE NOVIEMBRE 2027</div>
+            <div class="hero-adventure shadow-text">"De hecho... una aventura inesperada"</div>
         </div>
 
         <!-- TIP PARA VER LAS FOTOS EN PANTALLA COMPLETA -->
@@ -685,11 +686,11 @@
         </div>
     </section>
 
-    <!-- 2. MENSAJE / HISTORIA (FONDO: SECCIÓN 2) -->
+    <!-- 2. MENSAJE / HISTORIA (FONDO: SECCIÓN 2 - TARJETA CON TRANSPARENCIA KARIME 0.4) -->
     <section id="s-story" class="sheet" style="background-image: url('seccion_2_historia.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
-            <div class="card-main" style="max-width: 720px;">
+            <div class="story-card" style="max-width: 720px;">
                 <i class="fas fa-ring" style="font-size: 2.2rem; color: var(--color-gold); margin-bottom: 15px;"></i>
                 <h2 class="font-script" style="color: var(--color-gold); font-size: 3.2rem; margin-bottom: 15px;">
                     ¡Nos Casamos!
@@ -709,7 +710,7 @@
     <section id="s-parents" class="sheet" style="background-image: url('seccion_3_padres.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
-            <div class="card-main" style="max-width: 780px;">
+            <div class="story-card" style="max-width: 780px;">
                 <p style="font-family: var(--font-subepic); font-size: 0.9rem; letter-spacing: 3px; color: var(--color-silver); margin-bottom: 5px;">
                     CON EL AMOR Y BENDICIÓN DE
                 </p>
@@ -737,7 +738,7 @@
     <section id="s-countdown" class="sheet" style="background-image: url('seccion_4_countdown.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
-            <div class="card-main" style="max-width: 720px;">
+            <div class="story-card" style="max-width: 720px;">
                 <h2 class="font-script" style="font-size: 3.6rem; color: var(--color-gold); margin-bottom: 5px;">
                     Falta muy poco...
                 </h2>
@@ -764,11 +765,11 @@
         </div>
     </section>
 
-    <!-- 5. CEREMONIA Y RECEPCIÓN (FONDO: SECCIÓN 5) -->
+    <!-- 5. CEREMONIAS Y RECEPCIÓN (FONDO: SECCIÓN 5) -->
     <section id="s-venue" class="sheet" style="background-image: url('seccion_5_ceremonia.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
-            <div class="card-main" style="max-width: 800px;">
+            <div class="venue-details" style="max-width: 800px;">
                 <p style="font-family: var(--font-subepic); letter-spacing: 4px; font-size: 0.9rem; color: var(--color-silver); margin-bottom: 5px;">
                     DÓNDE Y CUÁNDO
                 </p>
@@ -810,7 +811,7 @@
     <section id="s-dresscode" class="sheet" style="background-image: url('seccion_6_vestimenta.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
-            <div class="card-main" style="max-width: 680px;">
+            <div class="story-card" style="max-width: 680px;">
                 <i class="fas fa-user-tie" style="font-size: 2.2rem; color: var(--color-gold); margin-bottom: 15px;"></i>
                 <h3 style="font-family: var(--font-subepic); font-size: 1.4rem; letter-spacing: 3px; color: var(--white); margin-bottom: 15px;">
                     CÓDIGO DE VESTIMENTA
@@ -829,7 +830,7 @@
     <section id="s-gifts" class="sheet" style="background-image: url('seccion_7_regalos.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
-            <div class="card-main" style="max-width: 780px;">
+            <div class="story-card" style="max-width: 780px;">
                 <i class="fas fa-gift" style="font-size: 2.2rem; color: var(--color-gold); margin-bottom: 15px;"></i>
                 <h2 class="font-script" style="color: var(--color-gold); font-size: 3.5rem; margin-bottom: 10px;">
                     Mesa de Regalos
@@ -868,7 +869,7 @@
     <section id="s-rsvp" class="sheet" style="background-image: url('seccion_8_rsvp.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
-            <div class="card-main rsvp-card">
+            <div class="rsvp-card">
                 <i class="fas fa-envelope-circle-check" style="font-size: 2.2rem; color: var(--color-gold); margin-bottom: 15px;"></i>
                 <h2 class="font-title" style="color: var(--white); letter-spacing: 3px; font-size: 1.6rem; margin-bottom: 8px;">
                     CONFIRMAR ASISTENCIA
