@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sistemas Lira//Invitaciones Digitales//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+SUMMARY:Boda Luz Andrea & Angel Emmanuel
+DESCRIPTION:Acompáñanos a celebrar nuestra boda. Ceremonia religiosa en Parroquia Medalla Milagrosa y Ceremonia civil/espiritual en La Palapa Eventos / Jardín Hacienda Real.
+LOCATION:La Palapa Eventos / Jardín Hacienda Real, Escobedo, N.L.
+DTSTART:20271113T220000Z
+DTEND:20271114T060000Z
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

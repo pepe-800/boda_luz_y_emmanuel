@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Luz & Emmanuel — Nuestra Boda | 13 de Noviembre 2027</title>
+    <meta name="description" content="Invitación de boda de Luz Andrea Martínez Ordóñez y Angel Emmanuel Reyes Guía — Sábado 13 de Noviembre de 2027" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* ================================================================== */
+        /* ===== 🌌 ESTILOS: BODA ÉLFICA & NOCHE MÁGICA 🌙 ===== */
+        /* ================================================================== */      
+
+        :root {
+            --color-espacio: #080c14; /* Fondo místico nocturno profundo */
+            --color-card: rgba(13, 20, 32, 0.94);
+            --color-card-border: rgba(229, 195, 101, 0.4);
+            --color-gold: #e5c365;    /* Dorado élfico luminoso */
+            --color-gold-hover: #ffd978;
+            --color-silver: #d1d8e0;  /* Plateado Mithril */
+            --white: #ffffff;
+            
+            --font-epic: 'Cinzel Decorative', cursive, serif;
+            --font-subepic: 'Cinzel', serif;
+            --font-title: 'Playfair Display', serif;
+            --font-script: 'Allura', cursive;
+            --font-body: 'Montserrat', sans-serif;
+
+            /* IMÁGENES OFICIALES DEL PROYECTO */
+            --img-cover: url('portada_moria.jpeg');          /* Portada Puerta Moria */
+            --img-hero-art: url('arte_fecha_aventura.jpeg'); /* Arte Oficial Novios */
+            --img-venue-art: url('arte_ceremonias_lugares.jpeg'); /* Arte Ceremonias */
+
+            --bg-color: var(--color-espacio);
+            --text-main: #e6ebf1;
+            --primary: var(--color-gold);
+        }
+
+        * { box-sizing: border-box; }
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: var(--font-body); 
+            overflow-x: hidden; 
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 { margin: 0; font-family: var(--font-subepic); font-weight: normal; }
+        .font-epic { font-family: var(--font-epic); }
+        .font-script { font-family: var(--font-script); font-weight: 400; }
+        
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+            text-align: center; 
+            position: relative; 
+            z-index: 2; 
+        }
+
+        .shadow-text { text-shadow: 0 2px 8px rgba(0,0,0,0.85); }
+        .glow-text-gold { text-shadow: 0 0 14px rgba(229, 195, 101, 0.55); }
+        
+        /* BOTONES ELEGANTES */
+        .btn {
+            display: inline-block;
+            padding: 13px 30px;
+            border-radius: 50px;
+            border: 1.5px solid var(--primary);
+            color: var(--white);
+            background: rgba(13, 20, 32, 0.85);
+            text-decoration: none;
+            font-family: var(--font-subepic);
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.35s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            color: #0b1424;
+            box-shadow: 0 0 25px rgba(229, 195, 101, 0.7);
+            transform: translateY(-3px);
+            font-weight: 700;
+        }
+
+        .btn-amazon {
+            background: linear-gradient(135deg, #232F3E, #131921);
+            border-color: #FF9900;
+            color: #FF9900;
+        }
+        .btn-amazon:hover {
+            background: #FF9900;
+            color: #111;
+            box-shadow: 0 0 20px rgba(255, 153, 0, 0.6);
+        }
+
+        .btn-whatsapp {
+            background: rgba(37, 211, 102, 0.2);
+            border-color: #25D366;
+            color: #fff;
+        }
+        .btn-whatsapp:hover {
+            background: #25D366;
+            color: #090e17;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .btn-email {
+            background: rgba(66, 133, 244, 0.2);
+            border-color: #4285F4;
+            color: #fff;
+        }
+        .btn-email:hover {
+            background: #4285F4;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(66, 133, 244, 0.6);
+        }
+
+        /* SECCIONES FULL SCREEN CON FONDOS MÍSTICOS */
+        .sheet {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            background: radial-gradient(circle at 50% 30%, #111a2b 0%, #080c14 75%);
+            border-bottom: 1px solid rgba(229, 195, 101, 0.15);
+        }
+        
+        .veil {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(8, 12, 20, 0.4) 0%, rgba(8, 12, 20, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* PORTADA MODAL INICIAL (PUERTA DE MORIA) */
+        #cover {
+            position: fixed;
+            inset: 0;
+            background: #080c14 var(--img-cover) no-repeat center center;
+            background-size: cover;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.9s ease, visibility 0.9s ease;
+        }
+        #cover .overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(8,12,20,0.65) 0%, rgba(4,6,10,0.92) 100%);
+        }
+        #cover .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 30px;
+            max-width: 600px;
+        }
+
+        /* BOTÓN DE MÚSICA FLOTANTE */
+        .music-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(13, 20, 32, 0.9);
+            border: 2px solid var(--color-gold);
+            color: var(--color-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            transition: all 0.3s;
+        }
+        .music-toggle:hover {
+            transform: scale(1.1);
+            background: var(--color-gold);
+            color: #080c14;
+        }
+        .music-toggle.playing i {
+            animation: spinMusic 4s linear infinite;
+        }
+        @keyframes spinMusic {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* TARJETAS DE CONTENIDO */
+        .card-main {
+            background: var(--color-card);
+            border: 1px solid var(--color-card-border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(12px);
+            margin: 0 auto;
+            position: relative;
+        }
+        .card-main::before {
+            content: "✦";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--color-gold);
+            font-size: 1.2rem;
+            background: #080c14;
+            padding: 0 12px;
+        }
+
+        /* ILUSTRACIÓN THEMATIC DE CADA SECCIÓN */
+        .section-illustration {
+            width: 190px;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 14px;
+            border: 2px solid var(--color-gold);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6), 0 0 15px rgba(229, 195, 101, 0.25);
+            margin: 0 auto 20px;
+            display: block;
+            background: #fff;
+            transition: transform 0.3s ease;
+        }
+        .section-illustration:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(229, 195, 101, 0.5);
+        }
+
+        /* HERO SECCIÓN */
+        .hero-names {
+            font-family: var(--font-epic);
+            font-size: 2.8rem;
+            color: var(--white);
+            letter-spacing: 3px;
+            line-height: 1.2;
+            margin: 15px 0;
+            text-shadow: 0 0 20px rgba(229, 195, 101, 0.5);
+        }
+        .hero-date {
+            font-family: var(--font-subepic);
+            font-size: 1.25rem;
+            letter-spacing: 5px;
+            color: var(--color-gold);
+            text-transform: uppercase;
+        }
+        .hero-adventure {
+            font-family: var(--font-script);
+            font-size: 2.4rem;
+            color: var(--color-silver);
+            margin-top: 15px;
+        }
+
+        /* PADRES */
+        .parents-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        @media(min-width: 650px) {
+            .parents-grid { grid-template-columns: 1fr 1fr; }
+        }
+        .parent-col h3 {
+            font-family: var(--font-script);
+            font-size: 2.3rem;
+            color: var(--color-gold);
+            margin-bottom: 12px;
+        }
+        .parent-col p {
+            margin: 6px 0;
+            font-size: 1.1rem;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        /* COUNTDOWN */
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            max-width: 500px;
+            margin: 25px auto;
+        }
+        .cd-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(229, 195, 101, 0.4);
+            border-radius: 14px;
+            padding: 15px 8px;
+        }
+        .cd-num {
+            font-family: var(--font-subepic);
+            font-size: 32px;
+            color: var(--color-gold);
+            font-weight: 700;
+        }
+        .cd-lbl {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-silver);
+            margin-top: 5px;
+        }
+
+        /* CEREMONIAS Y RECEPCIÓN */
+        .venue-divider {
+            width: 80px;
+            height: 1px;
+            background: var(--color-gold);
+            margin: 35px auto;
+            opacity: 0.6;
+        }
+        .venue-box {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .venue-box h3 {
+            font-family: var(--font-script);
+            font-size: 2.8rem;
+            color: var(--color-gold);
+            margin-bottom: 8px;
+        }
+        .venue-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+            margin: 6px 0;
+        }
+        .venue-address {
+            font-size: 0.95rem;
+            color: var(--color-silver);
+            line-height: 1.4;
+            max-width: 500px;
+            margin: 0 auto 15px;
+        }
+
+        /* GALERÍA / ARTES */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+        .gallery-card {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(229, 195, 101, 0.3);
+            background: rgba(0,0,0,0.5);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .gallery-card:hover {
+            transform: scale(1.03);
+            border-color: var(--color-gold);
+        }
+        .gallery-img {
+            width: 100%;
+            height: 220px;
+            display: block;
+            object-fit: cover;
+            cursor: pointer;
+            background: #fff;
+        }
+        .gallery-caption {
+            padding: 12px;
+            font-size: 0.82rem;
+            letter-spacing: 1px;
+            color: var(--color-gold);
+            font-family: var(--font-subepic);
+            background: #0a0f1a;
+        }
+
+        /* MESA DE REGALOS */
+        .gift-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        @media(min-width: 650px) {
+            .gift-options { grid-template-columns: 1fr 1fr; }
+        }
+        .gift-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(229, 195, 101, 0.25);
+            border-radius: 16px;
+            padding: 30px 20px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .gift-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-gold);
+        }
+        .gift-card h3 {
+            color: var(--color-gold);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        /* FORMULARIO RSVP */
+        .rsvp-card { max-width: 580px; }
+        .rsvp-input {
+            width: 100%;
+            padding: 14px 18px;
+            margin-bottom: 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(229, 195, 101, 0.4);
+            border-radius: 8px;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+        .rsvp-input:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            box-shadow: 0 0 10px rgba(229, 195, 101, 0.3);
+        }
+        .radio-group {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 15px 0 25px;
+        }
+        .radio-label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+        }
+        .radio-custom {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--color-gold);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+        }
+        input[type="radio"]:checked + .radio-custom::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: var(--color-gold);
+            border-radius: 50%;
+        }
+        input[type="radio"] { display: none; }
+
+        .rsvp-direct-contacts {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(229, 195, 101, 0.2);
+            font-size: 0.9rem;
+            color: var(--color-silver);
+        }
+        .rsvp-direct-contacts a {
+            color: var(--color-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 8, 14, 0.95);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .lightbox img {
+            max-width: 95%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 0 35px rgba(0,0,0,0.9);
+            border: 1px solid rgba(229, 195, 101, 0.4);
+            background: #fff;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #05080e;
+            padding: 40px 20px;
+            text-align: center;
+            color: #7a889b;
+            font-size: 0.88rem;
+            border-top: 1px solid rgba(229, 195, 101, 0.2);
+        }
+        .footer-sig a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        .footer-sig a:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+    <!-- PORTADA MÍSTICA (PUERTAS DE MORIA OFICIAL) -->
+    <div id="cover">
+        <div class="overlay"></div>
+        <div class="content fade-in visible">
+            <p class="shadow-text" style="font-family: var(--font-subepic); font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; color: var(--color-silver); margin-bottom: 15px;">
+                ✦ NUESTRA BODA ✦
+            </p>
+            <h1 class="hero-names shadow-text" style="font-size: 2.6rem;">Luz & Emmanuel</h1>
+            <p class="font-script shadow-text" style="font-size: 2.8rem; color: var(--color-gold); margin: 15px 0;">
+                Una Aventura Inesperada
+            </p>
+            <p style="font-family: var(--font-subepic); letter-spacing: 3px; color: var(--color-silver); font-size: 0.85rem; margin-bottom: 40px;">
+                SÁBADO 13 DE NOVIEMBRE 2027
+            </p>
+
+            <div>
+                <button class="btn" onclick="openInvitation()">
+                    <i class="fas fa-envelope-open" style="margin-right: 8px;"></i> Abrir Invitación
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÓN DE MÚSICA FLOTANTE -->
+    <div class="music-toggle" id="musicBtn" onclick="toggleMusic()" title="Reproducir / Pausar Música">
+        <i class="fas fa-music"></i>
+    </div>
+
+    <!-- AUDIO PLAYER (FALLEN DOWN) -->
+    <audio id="music" loop preload="auto">
+        <source src="musica.mp3" type="audio/mpeg">
+        <source src="musica.m4a" type="audio/mp4">
+    </audio>
+
+    <!-- 1. HERO / PRESENTACIÓN -->
+    <section id="hero" class="sheet">
+        <div class="veil"></div>
+        <div class="content container fade-in">
+            <div class="card-main" style="max-width: 740px;">
+                <img src="seccion_1_hero.jpg" class="section-illustration" alt="Arco Élfico de Bienvenida">
+                <p style="font-family: var(--font-subepic); letter-spacing: 4px; color: var(--color-silver); font-size: 0.85rem; margin-bottom: 10px;">
+                    CON LA BENDICIÓN DE DIOS Y NUESTRAS FAMILIAS
+                </p>
+                <h1 class="hero-names">Luz Andrea<br>&<br>Angel Emmanuel</h1>
+                <div class="hero-date glow-text-gold">SÁBADO 13 DE NOVIEMBRE 2027</div>
+                <div class="hero-adventure">"De hecho... una aventura inesperada"</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. MENSAJE / HISTORIA -->
+    <section id="s-story" class="sheet">
+        <div class="veil"></div>
+        <div class="content container fade-in">
+            <div class="card-main" style="max-width: 720px;">
+                <img src="seccion_2_historia.jpg" class="section-illustration" alt="Anillos Entrelazados con Hiedra y Rosas">
+                <h2 class="font-script" style="color: var(--color-gold); font-size: 3.2rem; margin-bottom: 15px;">
+                    ¡Nos Casamos!
+                </h2>
+                <p style="font-size: 1.2rem; line-height: 1.8; color: #fff; margin-bottom: 20px;">
+                    "Queremos emprender una aventura juntos hacia la eternidad,<br>
+                    y nos encantaría que nos acompañaras en este día tan importante."
+                </p>
+                <p style="font-style: italic; color: var(--color-gold); font-family: var(--font-subepic); font-size: 0.95rem; letter-spacing: 1px;">
+                    Eres cordialmente invitado a celebrar el inicio de nuestro para siempre.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PADRES -->
+    <section id="s-parents" class="sheet">
+        <div class="veil"></div>
+        <div class="content container fade-in">
+            <div class="card-main" style="max-width: 780px;">
+                <img src="seccion_3_padres.jpg" class="section-illustration" alt="Árboles Sagrados de la Familia">
+                <p style="font-family: var(--font-subepic); font-size: 0.9rem; letter-spacing: 3px; color: var(--color-silver); margin-bottom: 5px;">
+                    CON EL AMOR Y BENDICIÓN DE
+                </p>
+                <h2 class="font-script" style="color: var(--color-gold); font-size: 3.5rem; margin-bottom: 25px;">
+                    Nuestros Padres
+                </h2>
+                
+                <div class="parents-grid">
+                    <div class="parent-col">
+                        <h3>Padres de la Novia</h3>
+                        <p>Jesús Humberto Martínez Leija</p>
+                        <p>Luz Olivia Ordóñez Ordóñez</p>
+                    </div>
+                    <div class="parent-col">
+                        <h3>Padres del Novio</h3>
+                        <p>Alejandro Omar Reyes Delgado</p>
+                        <p>Marta Eugenia Guía Yáñez</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. COUNTDOWN Y CALENDARIO -->
+    <section id="s-countdown" class="sheet">
+        <div class="veil"></div>
+        <div class="content container fade-in">
+            <div class="card-main" style="max-width: 720px;">
+                <img src="seccion_4_countdown.jpg" class="section-illustration" alt="Reloj Celestial Astrológico">
+                <h2 class="font-script" style="font-size: 3.6rem; color: var(--color-gold); margin-bottom: 5px;">
+                    Falta muy poco...
+                </h2>
+                <p style="font-family: var(--font-subepic); letter-spacing: 3px; color: var(--color-silver); font-size: 0.9rem;">
+                    PARA NUESTRO GRAN DÍA
+                </p>
+                
+                <div class="countdown-grid" id="countdown">
+                    <div class="cd-box"><div class="cd-num" id="d">0</div><div class="cd-lbl">Días</div></div>
+                    <div class="cd-box"><div class="cd-num" id="h">0</div><div class="cd-lbl">Hrs</div></div>
+                    <div class="cd-box"><div class="cd-num" id="m">0</div><div class="cd-lbl">Min</div></div>
+                    <div class="cd-box"><div class="cd-num" id="s">0</div><div class="cd-lbl">Seg</div></div>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 25px;">
+                    <a class="btn" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Luz+Andrea+%26+Angel+Emmanuel&dates=20271113T220000Z/20271114T060000Z&details=Acompa%C3%B1anos+a+celebrar+nuestra+boda.+Ceremonia+religiosa+y+civil%2Fespiritual.&location=La+Palapa+Eventos+%2F+Jard%C3%ADn+Hacienda+Real%2C+General+Escobedo%2C+N.L.">
+                        <i class="far fa-calendar-plus" style="margin-right: 8px;"></i> Agendar Google Calendar
+                    </a>
+                    <a class="btn" href="luz-emmanuel-boda.ics" download>
+                        <i class="far fa-calendar" style="margin-right: 8px;"></i> Agendar en iPhone / Outlook
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CEREMONIA Y RECEPCIÓN -->
+    <section id="s-venue" class="sheet">
+        <div class="veil"></div>
+        <div class="content container fade-in">
+            <div class="card-main" style="max-width: 800px;">
+                <img src="seccion_5_ceremonia.jpg" class="section-illustration" alt="Gazebo y Templo de Ceremonias">
+                <p style="font-family: var(--font-subepic); letter-spacing: 4px; font-size: 0.9rem; color: var(--color-silver); margin-bottom: 5px;">
+                    DÓNDE Y CUÁNDO
+                </p>
+                <h2 class="font-script" style="color: var(--color-gold); font-size: 3.5rem; margin-bottom: 10px;">
+                    Nuestras Ceremonias
+                </h2>
+                <p style="font-family: var(--font-subepic); letter-spacing: 2px; font-weight: 700; color: #fff; font-size: 1.15rem; margin-bottom: 25px;">
+                    SÁBADO 13 DE NOVIEMBRE 2027
+                </p>
+
+                <!-- Ceremonia Religiosa -->
+                <div class="venue-box">
+                    <i class="fas fa-church" style="font-size: 2rem; color: var(--color-gold);"></i>
+                    <h3>Ceremonia Religiosa</h3>
+                    <div class="venue-name">Parroquia Medalla Milagrosa De Monterrey</div>
+                    <div class="venue-address">Thomas Alva Edison 606 Nte, Centro, 64000 Monterrey, N.L.</div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Parroquia+Medalla+Milagrosa+De+Monterrey+Thomas+Alva+Edison+606+Nte+Centro+64000+Monterrey+NL" target="_blank" class="btn">
+                        <i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i> Ver Parroquia en Maps
+                    </a>
+                </div>
+
+                <div class="venue-divider"></div>
+
+                <!-- Ceremonia Civil y Espiritual -->
+                <div class="venue-box">
+                    <i class="fas fa-glass-cheers" style="font-size: 2rem; color: var(--color-gold);"></i>
+                    <h3>Ceremonia Civil y Espiritual</h3>
+                    <div class="venue-name">La Palapa Eventos / Jardín Hacienda Real</div>
+                    <div class="venue-address">Av. Benito Juárez 814, entre J. Guerra y Callejón del beso, Cabecera Municipal, 66050 Cdad. Gral. Escobedo, N.L.</div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=La+Palapa+Eventos+Jardin+Hacienda+Real+Av+Benito+Juarez+814+General+Escobedo+NL" target="_blank" class="btn">
+                        <i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i> Ver Salón en Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CÓDIGO DE VESTIMENTA -->
+    <section id="s-dresscode" class="sheet">
+        <div class="veil"></div>
+        <div class="content container fade-in">
+            <div class="card-main" style="max-width: 680px;">
+                <img src="seccion_6_vestimenta.jpg" class="section-illustration" alt="Broche Élfico y Trajes Formales">
+                <h3 style="font-family: var(--font-subepic); font-size: 1.4rem; letter-spacing: 3px; color: var(--white); margin-bottom: 15px;">
+                    CÓDIGO DE VESTIMENTA
+                </h3>
+                <p style="font-family: var(--font-script); font-size: 3rem; color: var(--color-gold); margin: 0; line-height: 1;">
+                    Formal / Rigurosa
+                </p>
+                <p style="margin-top: 20px; font-size: 1.05rem; color: var(--color-silver); line-height: 1.6;">
+                    Te agradecemos acompañarnos con tu mejor atuendo formal para hacer aún más mágica nuestra velada.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. MESA DE REGALOS -->
+    <section id="s-gifts" class="sheet">
+        <div class="veil"></div>
+        <div class="content container fade-in">
+            <div class="card-main" style="max-width: 780px;">
+                <img src="seccion_7_regalos.jpg" class="section-illustration" alt="Cofre Tallado y Sobre de Obsequios">
+                <h2 class="font-script" style="color: var(--color-gold); font-size: 3.5rem; margin-bottom: 10px;">
+                    Mesa de Regalos
+                </h2>
+                <p style="font-size: 1.1rem; color: #fff; max-width: 600px; margin: 0 auto 25px;">
+                    Su presencia en este día tan anhelado es nuestro mejor obsequio. Si desean hacernos un presente, ponemos a su disposición:
+                </p>
+                
+                <div class="gift-options">
+                    <!-- Amazon Wedding -->
+                    <div class="gift-card">
+                        <i class="fab fa-amazon" style="font-size: 2.5rem; color: #FF9900; margin-bottom: 12px;"></i>
+                        <h3 style="color: #FF9900;">Amazon Bodas</h3>
+                        <p style="font-size: 0.95rem; color: var(--color-silver); margin-bottom: 20px;">
+                            Mesa de regalos oficial de la Familia Reyes Martínez.
+                        </p>
+                        <a href="https://www.amazon.com.mx/wedding/share/Mesa_de_regalos_familia_reyes_Martínez" target="_blank" class="btn btn-amazon">
+                            <i class="fas fa-external-link-alt" style="margin-right: 6px;"></i> Ver Mesa en Amazon
+                        </a>
+                    </div>
+
+                    <!-- Lluvia de Sobres -->
+                    <div class="gift-card">
+                        <i class="fas fa-envelope-open-text" style="font-size: 2.5rem; color: var(--color-gold); margin-bottom: 12px;"></i>
+                        <h3>Lluvia de Sobres</h3>
+                        <p style="font-size: 0.95rem; color: var(--color-silver); line-height: 1.6;">
+                            Habrá un cofre especial en la recepción para quienes gusten compartirnos su cariño en sobre.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CONFIRMACIÓN DE ASISTENCIA (RSVP) -->
+    <section id="s-rsvp" class="sheet">
+        <div class="veil"></div>
+        <div class="content container fade-in">
+            <div class="card-main rsvp-card">
+                <img src="seccion_8_rsvp.jpg" class="section-illustration" alt="Paloma Mensajera y Pluma de Caligrafía">
+                <h2 class="font-title" style="color: var(--white); letter-spacing: 3px; font-size: 1.6rem; margin-bottom: 8px;">
+                    CONFIRMAR ASISTENCIA
+                </h2>
+                <p style="margin-bottom: 25px; font-style: italic; color: var(--color-silver);">
+                    Por favor, confirma tu asistencia para esperarte con todo preparado.
+                </p>
+                
+                <div style="text-align: left;">
+                    <label style="display:block; margin-bottom:8px; color: var(--color-gold); font-size: 0.9rem; letter-spacing: 1px;">
+                        NOMBRE COMPLETO:
+                    </label>
+                    <input type="text" id="nombre" class="rsvp-input" placeholder="Ej. Familia Pérez / Juan Pérez">
+
+                    <label style="display:block; margin-bottom:8px; color: var(--color-gold); font-size: 0.9rem; letter-spacing: 1px;">
+                        ¿ASISTIRÁS A NUESTRA BODA?
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="asistencia" value="Si" checked>
+                            <span class="radio-custom"></span> Sí, con mucho gusto
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="asistencia" value="No">
+                            <span class="radio-custom"></span> Lo siento, no podré
+                        </label>
+                    </div>
+
+                    <label style="display:block; margin-bottom:8px; color: var(--color-gold); font-size: 0.9rem; letter-spacing: 1px;">
+                        NÚMERO DE PERSONAS:
+                    </label>
+                    <input type="number" id="pases" class="rsvp-input" min="1" max="10" value="2" placeholder="Número de personas">
+
+                    <label style="display:block; margin-bottom:8px; color: var(--color-gold); font-size: 0.9rem; letter-spacing: 1px;">
+                        MENSAJE PARA LOS NOVIOS (OPCIONAL):
+                    </label>
+                    <textarea id="mensaje" class="rsvp-input" rows="3" placeholder="Déjanos tus felicitaciones o buenos deseos..."></textarea>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+                    <button class="btn btn-whatsapp" onclick="sendWhatsApp()" style="width: 100%; font-weight: 700;">
+                        <i class="fab fa-whatsapp" style="font-size: 1.3rem; margin-right: 8px;"></i> Confirmar por WhatsApp
+                    </button>
+                    <button class="btn btn-email" onclick="sendEmail()" style="width: 100%; font-weight: 600;">
+                        <i class="far fa-envelope" style="font-size: 1.1rem; margin-right: 8px;"></i> Confirmar por Correo
+                    </button>
+                </div>
+
+                <div class="rsvp-direct-contacts">
+                    <p style="margin: 4px 0;">
+                        <i class="fab fa-whatsapp" style="color: #25D366; margin-right: 6px;"></i> WhatsApp: <a href="https://wa.me/528122032913" target="_blank">81 2203 2913</a>
+                    </p>
+                    <p style="margin: 4px 0;">
+                        <i class="far fa-envelope" style="color: #4285F4; margin-right: 6px;"></i> Correo: <a href="mailto:zelivereyesmartinez@gmail.com">zelivereyesmartinez@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. GALERÍA DE ARTES OFICIALES -->
+    <section id="s-gallery" class="sheet">
+        <div class="veil"></div>
+        <div class="content container fade-in">
+            <h2 class="font-script" style="font-size: 3.8rem; color: var(--color-gold); margin-bottom: 5px;">
+                Artes & Grabados
+            </h2>
+            <p style="font-family: var(--font-subepic); letter-spacing: 2px; color: var(--color-silver); margin-bottom: 25px;">
+                TOCA CUALQUIER IMAGEN PARA AMPLIAR
+            </p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="portada_moria.jpeg" class="gallery-img" alt="Puertas de Moria">
+                    <div class="gallery-caption">Puertas de Moria • Portada</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="arte_fecha_aventura.jpeg" class="gallery-img" alt="Arte Fecha y Aventura">
+                    <div class="gallery-caption">Una Aventura Inesperada</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="arte_ceremonias_lugares.jpeg" class="gallery-img" alt="Arte Ceremonias y Lugares">
+                    <div class="gallery-caption">Ceremonias Oficiales & QRs</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="seccion_1_hero.jpg" class="gallery-img" alt="Arco Élfico">
+                    <div class="gallery-caption">El Umbral Élfico</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="seccion_2_historia.jpg" class="gallery-img" alt="Anillos y Hiedra">
+                    <div class="gallery-caption">Alianzas Eternas</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="seccion_3_padres.jpg" class="gallery-img" alt="Árboles Sagrados">
+                    <div class="gallery-caption">Árboles Familiares</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="seccion_4_countdown.jpg" class="gallery-img" alt="Reloj Celestial">
+                    <div class="gallery-caption">Esfera Celestial</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="seccion_5_ceremonia.jpg" class="gallery-img" alt="Glorieta Sagrada">
+                    <div class="gallery-caption">Glorieta del Jardín</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="seccion_6_vestimenta.jpg" class="gallery-img" alt="Broche Élfico">
+                    <div class="gallery-caption">Broche & Etiqueta</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="seccion_7_regalos.jpg" class="gallery-img" alt="Cofre de Regalos">
+                    <div class="gallery-caption">Cofre de Deseos</div>
+                </div>
+                <div class="gallery-card">
+                    <img src="seccion_8_rsvp.jpg" class="gallery-img" alt="Paloma Mensajera">
+                    <div class="gallery-caption">Paloma Mensajera</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="font-family: var(--font-subepic); font-size: 1.1rem; color: var(--color-gold); margin-bottom: 10px; letter-spacing: 2px;">
+            Luz Andrea & Angel Emmanuel • 13.11.2027
+        </p>
+        <p style="font-size: 0.85rem; color: #5d6d7e; margin-bottom: 15px;">
+            "De hecho... una aventura inesperada"
+        </p>
+        <div class="footer-sig">
+            <a href="https://www.instagram.com/invitaciones_digitales_lira?igsh=c25yMTExZjB4bWtl" target="_blank">
+                <i class="fab fa-instagram"></i> Invitaciones Digitales Lira
+            </a>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX PARA FOTOS -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Ampliación">
+    </div>
+
+    <script>
+        // CONFIGURACIÓN OFICIAL DEL CLIENTE
+        // Fecha objetivo: Sábado 13 de Noviembre de 2027 a las 16:00 hrs
+        const WEDDING_DATE = new Date("2027-11-13T16:00:00").getTime();
+        const WHATSAPP_PHONE = "528122032913"; // 81 2203 2913 con lada internacional México (+52)
+        const CLIENT_EMAIL = "zelivereyesmartinez@gmail.com";
+
+        // ABRIR INVITACIÓN Y REPRODUCIR MÚSICA
+        window.openInvitation = function() {
+            const cover = document.getElementById('cover');
+            const music = document.getElementById('music');
+            const musicBtn = document.getElementById('musicBtn');
+            
+            cover.style.opacity = '0';
+            setTimeout(() => {
+                cover.style.display = 'none';
+                if (music) {
+                    music.play().then(() => {
+                        if (musicBtn) musicBtn.classList.add('playing');
+                    }).catch(e => {
+                        console.log("Autoplay bloqueado por el navegador. Pulsa el botón de música para reproducir.");
+                    });
+                }
+            }, 800);
+        };
+
+        // CONTROL DE MÚSICA
+        window.toggleMusic = function() {
+            const music = document.getElementById('music');
+            const musicBtn = document.getElementById('musicBtn');
+            if (!music) return;
+
+            if (music.paused) {
+                music.play();
+                musicBtn.classList.add('playing');
+            } else {
+                music.pause();
+                musicBtn.classList.remove('playing');
+            }
+        };
+
+        // CONFIRMACIÓN POR WHATSAPP
+        window.sendWhatsApp = function() {
+            const nombre = document.getElementById('nombre').value.trim();
+            const asistencia = document.querySelector('input[name="asistencia"]:checked').value;
+            const pases = document.getElementById('pases').value || '1';
+            const mensaje = document.getElementById('mensaje').value.trim();
+
+            if (!nombre) {
+                alert("Por favor, ingresa tu nombre antes de confirmar.");
+                document.getElementById('nombre').focus();
+                return;
+            }
+
+            let texto = `¡Hola Luz & Emmanuel! Soy *${nombre}*.\n`;
+            if (asistencia === 'Si') {
+                texto += `✅ Confirmo con mucha alegría mi asistencia a su boda.\n`;
+                texto += `👥 Número de personas: *${pases}*\n`;
+            } else {
+                texto += `❌ Lamentablemente no podré acompañarlos en este día tan especial.\n`;
+            }
+
+            if (mensaje) {
+                texto += `💌 Mensaje: "${mensaje}"\n`;
+            }
+
+            const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(texto)}`;
+            window.open(url, "_blank");
+        };
+
+        // CONFIRMACIÓN POR CORREO ELECTRÓNICO
+        window.sendEmail = function() {
+            const nombre = document.getElementById('nombre').value.trim();
+            const asistencia = document.querySelector('input[name="asistencia"]:checked').value;
+            const pases = document.getElementById('pases').value || '1';
+            const mensaje = document.getElementById('mensaje').value.trim();
+
+            if (!nombre) {
+                alert("Por favor, ingresa tu nombre antes de confirmar.");
+                document.getElementById('nombre').focus();
+                return;
+            }
+
+            const subject = `Confirmación Boda Luz & Emmanuel - ${nombre}`;
+            let body = `Hola Luz y Emmanuel,\n\nSoy ${nombre}.\n`;
+            if (asistencia === 'Si') {
+                body += `Confirmo con mucho gusto mi asistencia a su boda el 13 de Noviembre de 2027.\n`;
+                body += `Número de personas: ${pases}\n\n`;
+            } else {
+                body += `Lamentablemente no podré asistir a su boda.\n\n`;
+            }
+
+            if (mensaje) {
+                body += `Mensaje para los novios:\n"${mensaje}"\n\n`;
+            }
+
+            body += `¡Muchas felicidades!\n`;
+
+            const mailtoUrl = `mailto:${CLIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoUrl;
+        };
+
+        // COUNTDOWN Y EVENTOS AL CARGAR
+        document.addEventListener('DOMContentLoaded', () => {
+            // COUNTDOWN
+            const countdownInterval = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = WEDDING_DATE - now;
+
+                const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+                const elD = document.getElementById("d");
+                const elH = document.getElementById("h");
+                const elM = document.getElementById("m");
+                const elS = document.getElementById("s");
+
+                if (elD && elH && elM && elS) {
+                    elD.innerText = d > 0 ? d : 0;
+                    elH.innerText = h > 0 ? h : 0;
+                    elM.innerText = m > 0 ? m : 0;
+                    elS.innerText = s > 0 ? s : 0;
+                }
+
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    const cdContainer = document.getElementById("countdown");
+                    if (cdContainer) {
+                        cdContainer.innerHTML = "<div style='grid-column: span 4; font-size: 22px; font-family: Cinzel; color: #e5c365;'>¡El Gran Día ha llegado!</div>";
+                    }
+                }
+            }, 1000);
+
+            // LIGHTBOX PARA GALERÍA
+            const lightbox = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightbox-img');
+            const lbClose = document.querySelector('.lightbox-close');
+            
+            if (lightbox && lbImg) {
+                document.querySelectorAll('.gallery-img').forEach(img => {
+                    img.addEventListener('click', () => {
+                        lbImg.src = img.src;
+                        lightbox.style.display = 'flex';
+                    });
+                });
+                if (lbClose) {
+                    lbClose.addEventListener('click', () => {
+                        lightbox.style.display = 'none';
+                    });
+                }
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) lightbox.style.display = 'none';
+                });
+            }
+
+            // ANIMACIÓN AL SCROLL (FADE IN)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
