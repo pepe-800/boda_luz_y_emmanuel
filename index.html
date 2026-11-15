@@ -66,7 +66,7 @@
         .shadow-text { text-shadow: 0 2px 10px rgba(0,0,0,0.85); }
         .glow-text-gold { text-shadow: 0 0 14px rgba(229, 195, 101, 0.6); }
         
-        /* BOTONES ELEGANTES */
+        /* BOTONES ELEGANTES (SIN DIFUMINADO / BLUR 0PX) */
         .btn {
             display: inline-block;
             padding: 13px 30px;
@@ -323,7 +323,7 @@
             to { transform: rotate(360deg); }
         }
 
-        /* TARJETAS DE CONTENIDO: TRANSPARENCIA EXACTA A KARIME (rgba(11, 21, 40, 0.4)) */
+        /* TARJETAS DE CONTENIDO: TRANSPARENCIA 0.4 Y DIFUMINADO 0PX (IDÉNTICO A KARIME) */
         .story-card, .venue-details, .rsvp-card, .card-main {
             background: var(--color-card-bg);
             border: 1px solid var(--color-card-border);
@@ -457,43 +457,6 @@
             margin: 0 auto 15px;
         }
 
-        /* GALERÍA / ARTES */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            margin: 30px auto;
-        }
-        .gallery-card {
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(229, 195, 101, 0.3);
-            background: rgba(0,0,0,0.5);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-            transition: transform 0.3s, border-color 0.3s;
-        }
-        .gallery-card:hover {
-            transform: scale(1.03);
-            border-color: var(--color-gold);
-        }
-        .gallery-img {
-            width: 100%;
-            height: 220px;
-            display: block;
-            object-fit: cover;
-            cursor: pointer;
-            background: #fff;
-        }
-        .gallery-caption {
-            padding: 12px;
-            font-size: 0.82rem;
-            letter-spacing: 1px;
-            color: var(--color-gold);
-            font-family: var(--font-subepic);
-            background: #0b1528;
-        }
-
         /* MESA DE REGALOS */
         .gift-options {
             display: grid;
@@ -582,39 +545,10 @@
             font-weight: 600;
         }
 
-        /* LIGHTBOX */
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            background: rgba(5, 10, 20, 0.95);
-            z-index: 2000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .lightbox img {
-            max-width: 95%;
-            max-height: 90vh;
-            border-radius: 8px;
-            box-shadow: 0 0 35px rgba(0,0,0,0.9);
-            border: 1px solid rgba(229, 195, 101, 0.4);
-            background: #fff;
-        }
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #fff;
-            font-size: 40px;
-            cursor: pointer;
-            line-height: 1;
-        }
-
         /* FOOTER */
         footer {
             background: #050a14;
-            padding: 40px 20px;
+            padding: 45px 20px;
             text-align: center;
             color: #7a889b;
             font-size: 0.88rem;
@@ -664,7 +598,7 @@
         <source src="musica.m4a" type="audio/mp4">
     </audio>
 
-    <!-- 1. HERO / PRESENTACIÓN (FONDO: SECCIÓN 1 - TEXTOS FLOTANTES SOBRE EL VELO) -->
+    <!-- 1. HERO / PRESENTACIÓN (FONDO: SECCIÓN 1) -->
     <section id="hero" class="sheet" style="background-image: url('seccion_1_hero.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
@@ -687,7 +621,7 @@
         </div>
     </section>
 
-    <!-- 2. MENSAJE / HISTORIA (FONDO: SECCIÓN 2 - TARJETA CON TRANSPARENCIA KARIME 0.4) -->
+    <!-- 2. MENSAJE / HISTORIA (FONDO: SECCIÓN 2) -->
     <section id="s-story" class="sheet" style="background-image: url('seccion_2_historia.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
@@ -866,7 +800,7 @@
         </div>
     </section>
 
-    <!-- 8. CONFIRMACIÓN DE ASISTENCIA (FONDO: SECCIÓN 8) -->
+    <!-- 8. CONFIRMACIÓN DE ASISTENCIA (FONDO: SECCIÓN 8) - REGISTRO GOOGLE APPS SCRIPT & WHATSAPP -->
     <section id="s-rsvp" class="sheet" style="background-image: url('seccion_8_rsvp.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
@@ -886,6 +820,11 @@
                     <input type="text" id="nombre" class="rsvp-input" placeholder="Ej. Familia Pérez / Juan Pérez">
 
                     <label style="display:block; margin-bottom:8px; color: var(--color-gold); font-size: 0.9rem; letter-spacing: 1px;">
+                        TELÉFONO O WHATSAPP:
+                    </label>
+                    <input type="tel" id="telefono" class="rsvp-input" placeholder="Ej. 81 1234 5678">
+
+                    <label style="display:block; margin-bottom:8px; color: var(--color-gold); font-size: 0.9rem; letter-spacing: 1px;">
                         ¿ASISTIRÁS A NUESTRA BODA?
                     </label>
                     <div class="radio-group">
@@ -900,7 +839,7 @@
                     </div>
 
                     <label style="display:block; margin-bottom:8px; color: var(--color-gold); font-size: 0.9rem; letter-spacing: 1px;">
-                        NÚMERO DE PERSONAS:
+                        NÚMERO DE ADULTOS CONFIRMADOS:
                     </label>
                     <input type="number" id="pases" class="rsvp-input" min="1" max="10" value="2" placeholder="Número de personas">
 
@@ -911,11 +850,11 @@
                 </div>
 
                 <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
-                    <button class="btn btn-whatsapp" onclick="sendWhatsApp()" style="width: 100%; font-weight: 700;">
+                    <button class="btn btn-whatsapp" id="btnWhatsApp" onclick="sendWhatsApp()" style="width: 100%; font-weight: 700;">
                         <i class="fab fa-whatsapp" style="font-size: 1.3rem; margin-right: 8px;"></i> Confirmar por WhatsApp
                     </button>
-                    <button class="btn btn-email" onclick="sendEmail()" style="width: 100%; font-weight: 600;">
-                        <i class="far fa-envelope" style="font-size: 1.1rem; margin-right: 8px;"></i> Confirmar por Correo
+                    <button class="btn btn-email" id="btnEmail" onclick="sendRSVP()" style="width: 100%; font-weight: 600;">
+                        <i class="far fa-paper-plane" style="font-size: 1.1rem; margin-right: 8px;"></i> Registrar y Notificar por Correo
                     </button>
                 </div>
 
@@ -926,66 +865,6 @@
                     <p style="margin: 4px 0;">
                         <i class="far fa-envelope" style="color: #4285F4; margin-right: 6px;"></i> Correo: <a href="mailto:zelivereyesmartinez@gmail.com">zelivereyesmartinez@gmail.com</a>
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 9. GALERÍA DE ARTES OFICIALES -->
-    <section id="s-gallery" class="sheet" style="background-image: url('arte_fecha_aventura.jpeg');">
-        <div class="veil"></div>
-        <div class="content container fade-in">
-            <h2 class="font-script" style="font-size: 3.8rem; color: var(--color-gold); margin-bottom: 5px;">
-                Artes & Grabados
-            </h2>
-            <p style="font-family: var(--font-subepic); letter-spacing: 2px; color: var(--color-silver); margin-bottom: 25px;">
-                TOCA CUALQUIER IMAGEN PARA AMPLIAR
-            </p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-card">
-                    <img src="portada_moria.jpeg" class="gallery-img" alt="Puertas de Moria">
-                    <div class="gallery-caption">Puertas de Moria • Portada</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="arte_fecha_aventura.jpeg" class="gallery-img" alt="Arte Fecha y Aventura">
-                    <div class="gallery-caption">Una Aventura Inesperada</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="arte_ceremonias_lugares.jpeg" class="gallery-img" alt="Arte Ceremonias y Lugares">
-                    <div class="gallery-caption">Ceremonias Oficiales & QRs</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="seccion_1_hero.jpg" class="gallery-img" alt="Arco Élfico">
-                    <div class="gallery-caption">El Umbral Élfico</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="seccion_2_historia.jpg" class="gallery-img" alt="Anillos y Hiedra">
-                    <div class="gallery-caption">Alianzas Eternas</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="seccion_3_padres.jpg" class="gallery-img" alt="Árboles Sagrados">
-                    <div class="gallery-caption">Árboles Familiares</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="seccion_4_countdown.jpg" class="gallery-img" alt="Reloj Celestial">
-                    <div class="gallery-caption">Esfera Celestial</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="seccion_5_ceremonia.jpg" class="gallery-img" alt="Glorieta Sagrada">
-                    <div class="gallery-caption">Glorieta del Jardín</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="seccion_6_vestimenta.jpg" class="gallery-img" alt="Broche Élfico">
-                    <div class="gallery-caption">Broche & Etiqueta</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="seccion_7_regalos.jpg" class="gallery-img" alt="Cofre de Regalos">
-                    <div class="gallery-caption">Cofre de Deseos</div>
-                </div>
-                <div class="gallery-card">
-                    <img src="seccion_8_rsvp.jpg" class="gallery-img" alt="Paloma Mensajera">
-                    <div class="gallery-caption">Paloma Mensajera</div>
                 </div>
             </div>
         </div>
@@ -1006,18 +885,19 @@
         </div>
     </footer>
 
-    <!-- LIGHTBOX PARA FOTOS -->
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="Ampliación">
-    </div>
-
     <script>
-        // CONFIGURACIÓN OFICIAL DEL CLIENTE
+        // =========================================================================
+        // CONFIGURACIÓN OFICIAL DEL CLIENTE & SISTEMAS LIRA
+        // =========================================================================
         // Fecha objetivo: Sábado 13 de Noviembre de 2027 a las 16:00 hrs
         const WEDDING_DATE = new Date("2027-11-13T16:00:00").getTime();
         const WHATSAPP_PHONE = "528122032913"; // 81 2203 2913 con lada internacional México (+52)
         const CLIENT_EMAIL = "zelivereyesmartinez@gmail.com";
+        const LIRA_OFFICIAL_EMAIL = "invitaciones.digitales.lira@gmail.com";
+
+        // URL DE GOOGLE APPS SCRIPT WEB APP
+        // (Pega aquí la URL de tu implementación web que termina en /exec)
+        const GOOGLE_SCRIPT_URL = ""; 
 
         // ABRIR INVITACIÓN Y REPRODUCIR MÚSICA
         window.openInvitation = function() {
@@ -1053,9 +933,89 @@
             }
         };
 
+        // ENVIAR / REGISTRAR POR GOOGLE APPS SCRIPT Y CORREO OFICIAL
+        window.sendRSVP = function() {
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const asistencia = document.querySelector('input[name="asistencia"]:checked').value;
+            const pases = document.getElementById('pases').value || '1';
+            const mensaje = document.getElementById('mensaje').value.trim();
+            const btnEmail = document.getElementById('btnEmail');
+
+            if (!nombre) {
+                alert("Por favor, ingresa tu nombre completo antes de confirmar.");
+                document.getElementById('nombre').focus();
+                return;
+            }
+
+            if (!telefono) {
+                alert("Por favor, ingresa un teléfono o WhatsApp de contacto.");
+                document.getElementById('telefono').focus();
+                return;
+            }
+
+            // Si está configurada la URL de Google Apps Script, envía los datos a Google Sheets
+            if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.startsWith("http")) {
+                const originalHtml = btnEmail.innerHTML;
+                btnEmail.disabled = true;
+                btnEmail.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registrando en lista...';
+
+                const params = new URLSearchParams();
+                params.append("Nombre", nombre);
+                params.append("Telefono", telefono);
+                params.append("Asistencia", asistencia === "Si" ? "Sí, con mucho gusto" : "Lo siento, no podré");
+                params.append("Adultos confirmados", pases);
+                params.append("Mensaje", mensaje);
+
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: params.toString()
+                })
+                .then(r => r.json().catch(() => ({ ok: true })))
+                .then(res => {
+                    btnEmail.disabled = false;
+                    btnEmail.innerHTML = originalHtml;
+                    alert("¡Muchas gracias! Tu confirmación ha sido guardada en la lista oficial y notificada por correo a los novios.");
+                    document.getElementById('nombre').value = '';
+                    document.getElementById('telefono').value = '';
+                    document.getElementById('mensaje').value = '';
+                })
+                .catch(err => {
+                    console.error("Error enviando a Apps Script:", err);
+                    btnEmail.disabled = false;
+                    btnEmail.innerHTML = originalHtml;
+                    alert("Confirmación recibida. Abriendo cliente de correo para respaldar...");
+                    fallbackMailto(nombre, telefono, asistencia, pases, mensaje);
+                });
+
+            } else {
+                // Fallback directo por correo electrónico con destinatario a los novios y copia a Lira
+                fallbackMailto(nombre, telefono, asistencia, pases, mensaje);
+            }
+        };
+
+        function fallbackMailto(nombre, telefono, asistencia, pases, mensaje) {
+            const subject = `Nueva confirmación - Boda Luz & Emmanuel - ${nombre}`;
+            let body = `¡Hola Luz y Emmanuel!\n\nSe ha recibido una confirmación de asistencia:\n\n`;
+            body += `• Nombre: ${nombre}\n`;
+            body += `• Teléfono: ${telefono}\n`;
+            body += `• Asistencia: ${asistencia === 'Si' ? 'Sí, con mucho gusto asistiré' : 'Lo siento, no podré asistir'}\n`;
+            body += `• Adultos confirmados: ${pases}\n`;
+            if (mensaje) body += `• Mensaje: "${mensaje}"\n`;
+            body += `\n---\nInvitaciones Digitales Lira\n${LIRA_OFFICIAL_EMAIL}`;
+
+            const recipients = `${CLIENT_EMAIL},${LIRA_OFFICIAL_EMAIL}`;
+            const mailtoUrl = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoUrl;
+        }
+
         // CONFIRMACIÓN POR WHATSAPP
         window.sendWhatsApp = function() {
             const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
             const asistencia = document.querySelector('input[name="asistencia"]:checked').value;
             const pases = document.getElementById('pases').value || '1';
             const mensaje = document.getElementById('mensaje').value.trim();
@@ -1069,49 +1029,34 @@
             let texto = `¡Hola Luz & Emmanuel! Soy *${nombre}*.\n`;
             if (asistencia === 'Si') {
                 texto += `✅ Confirmo con mucha alegría mi asistencia a su boda.\n`;
-                texto += `👥 Número de personas: *${pases}*\n`;
+                texto += `👥 Adultos confirmados: *${pases}*\n`;
             } else {
                 texto += `❌ Lamentablemente no podré acompañarlos en este día tan especial.\n`;
             }
-
+            if (telefono) {
+                texto += `📞 Teléfono: ${telefono}\n`;
+            }
             if (mensaje) {
                 texto += `💌 Mensaje: "${mensaje}"\n`;
             }
 
+            // Si hay script de Google, registrar también en segundo plano
+            if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL.startsWith("http")) {
+                const params = new URLSearchParams();
+                params.append("Nombre", nombre);
+                params.append("Telefono", telefono || "Enviado por WhatsApp");
+                params.append("Asistencia", asistencia === "Si" ? "Sí, con mucho gusto (WhatsApp)" : "No podrá asistir (WhatsApp)");
+                params.append("Adultos confirmados", pases);
+                params.append("Mensaje", mensaje);
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: params.toString()
+                }).catch(() => {});
+            }
+
             const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(texto)}`;
             window.open(url, "_blank");
-        };
-
-        // CONFIRMACIÓN POR CORREO ELECTRÓNICO
-        window.sendEmail = function() {
-            const nombre = document.getElementById('nombre').value.trim();
-            const asistencia = document.querySelector('input[name="asistencia"]:checked').value;
-            const pases = document.getElementById('pases').value || '1';
-            const mensaje = document.getElementById('mensaje').value.trim();
-
-            if (!nombre) {
-                alert("Por favor, ingresa tu nombre antes de confirmar.");
-                document.getElementById('nombre').focus();
-                return;
-            }
-
-            const subject = `Confirmación Boda Luz & Emmanuel - ${nombre}`;
-            let body = `Hola Luz y Emmanuel,\n\nSoy ${nombre}.\n`;
-            if (asistencia === 'Si') {
-                body += `Confirmo con mucho gusto mi asistencia a su boda el 13 de Noviembre de 2027.\n`;
-                body += `Número de personas: ${pases}\n\n`;
-            } else {
-                body += `Lamentablemente no podré asistir a su boda.\n\n`;
-            }
-
-            if (mensaje) {
-                body += `Mensaje para los novios:\n"${mensaje}"\n\n`;
-            }
-
-            body += `¡Muchas felicidades!\n`;
-
-            const mailtoUrl = `mailto:${CLIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoUrl;
         };
 
         // INICIALIZACIÓN
@@ -1173,35 +1118,13 @@
             }
 
             // FUNCIÓN: TOCAR CUALQUIER HOJA PARA VER SOLO LA IMAGEN DE FONDO
-            const interactiveSelector = 'a, button, input, textarea, select, label, .gallery-img, .lightbox, .lightbox-close, .tap-hint, .music-toggle';
+            const interactiveSelector = 'a, button, input, textarea, select, label, .tap-hint, .music-toggle';
             document.querySelectorAll('.sheet').forEach(sheet => {
                 sheet.addEventListener('click', (event) => {
                     if (event.target.closest(interactiveSelector)) return;
                     sheet.classList.toggle('image-only');
                 });
             });
-
-            // LIGHTBOX PARA GALERÍA
-            const lightbox = document.getElementById('lightbox');
-            const lbImg = document.getElementById('lightbox-img');
-            const lbClose = document.querySelector('.lightbox-close');
-            
-            if (lightbox && lbImg) {
-                document.querySelectorAll('.gallery-img').forEach(img => {
-                    img.addEventListener('click', () => {
-                        lbImg.src = img.src;
-                        lightbox.style.display = 'flex';
-                    });
-                });
-                if (lbClose) {
-                    lbClose.addEventListener('click', () => {
-                        lightbox.style.display = 'none';
-                    });
-                }
-                lightbox.addEventListener('click', (e) => {
-                    if (e.target === lightbox) lightbox.style.display = 'none';
-                });
-            }
 
             // ANIMACIÓN AL SCROLL (FADE IN)
             const observer = new IntersectionObserver((entries) => {
