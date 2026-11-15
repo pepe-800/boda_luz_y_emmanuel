@@ -19,7 +19,7 @@
 
         :root {
             --color-espacio: #080c14; /* Fondo místico nocturno profundo */
-            --color-card: rgba(13, 20, 32, 0.94);
+            --color-card: rgba(13, 20, 32, 0.92);
             --color-card-border: rgba(229, 195, 101, 0.4);
             --color-gold: #e5c365;    /* Dorado élfico luminoso */
             --color-gold-hover: #ffd978;
@@ -32,10 +32,7 @@
             --font-script: 'Allura', cursive;
             --font-body: 'Montserrat', sans-serif;
 
-            /* IMÁGENES OFICIALES DEL PROYECTO */
-            --img-cover: url('portada_moria.jpeg');          /* Portada Puerta Moria */
-            --img-hero-art: url('arte_fecha_aventura.jpeg'); /* Arte Oficial Novios */
-            --img-venue-art: url('arte_ceremonias_lugares.jpeg'); /* Arte Ceremonias */
+            --img-cover: url('portada_moria.jpeg'); /* Portada Puerta Moria */
 
             --bg-color: var(--color-espacio);
             --text-main: #e6ebf1;
@@ -129,7 +126,7 @@
             box-shadow: 0 0 20px rgba(66, 133, 244, 0.6);
         }
 
-        /* SECCIONES FULL SCREEN CON FONDOS MÍSTICOS */
+        /* SECCIONES FULL SCREEN CON IMÁGENES DE FONDO */
         .sheet {
             position: relative;
             min-height: 100vh;
@@ -137,15 +134,44 @@
             align-items: center;
             justify-content: center;
             padding: 80px 20px;
-            background: radial-gradient(circle at 50% 30%, #111a2b 0%, #080c14 75%);
-            border-bottom: 1px solid rgba(229, 195, 101, 0.15);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            cursor: pointer;
+            transition: background 0.4s ease;
         }
         
         .veil {
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at center, rgba(8, 12, 20, 0.4) 0%, rgba(8, 12, 20, 0.85) 100%);
+            background: radial-gradient(ellipse at center, rgba(8, 12, 20, 0.75) 0%, rgba(4, 6, 10, 0.92) 100%);
             z-index: 1;
+            transition: opacity 0.4s ease;
+        }
+
+        /* MODO VER SOLO IMAGEN (AL TOCAR LA HOJA) */
+        .sheet.image-only {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: #ffffff;
+        }
+
+        .sheet.image-only .veil {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .sheet.image-only .content {
+            opacity: 0 !important;
+            pointer-events: none;
+            transform: translateY(20px);
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            transition: opacity 0.35s ease, transform 0.35s ease;
         }
 
         .fade-in {
@@ -158,7 +184,87 @@
             transform: translateY(0);
         }
 
-        /* PORTADA MODAL INICIAL (PUERTA DE MORIA) */
+        /* TIP / INSTRUCCIÓN FLOTANTE (ESTILO KARIME) */
+        .tap-hint {
+            position: absolute;
+            left: 50%;
+            bottom: 25px;
+            z-index: 10;
+            width: min(88vw, 360px);
+            padding: 16px 16px 14px;
+            border: 1px solid rgba(229, 195, 101, 0.65);
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(13, 20, 32, 0.96), rgba(8, 12, 20, 0.92));
+            color: var(--white);
+            transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+            pointer-events: auto;
+            animation: tapHintIn 0.7s ease both;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            text-align: center;
+        }
+
+        .tap-hint-icon {
+            width: 38px;
+            height: 38px;
+            margin: 0 auto 8px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: var(--color-gold);
+            background: rgba(229, 195, 101, 0.15);
+            border: 1px solid rgba(229, 195, 101, 0.4);
+        }
+
+        .tap-hint strong {
+            display: block;
+            color: var(--color-gold);
+            font-family: var(--font-subepic);
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+
+        .tap-hint p {
+            margin: 0 0 12px;
+            font-size: 0.85rem;
+            color: var(--color-silver);
+            line-height: 1.4;
+        }
+
+        .tap-hint-accept {
+            border: 1px solid var(--color-gold);
+            border-radius: 999px;
+            padding: 8px 22px;
+            color: #080c14;
+            background: var(--color-gold);
+            font-family: var(--font-subepic);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .tap-hint-accept:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(229, 195, 101, 0.4);
+        }
+
+        .tap-hint.is-hidden {
+            opacity: 0;
+            filter: blur(2px);
+            transform: translateX(-50%) translateY(12px) scale(0.97);
+        }
+
+        @keyframes tapHintIn {
+            from { opacity: 0; transform: translateX(-50%) translateY(18px) scale(0.96); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+        }
+
+        /* PORTADA MODAL INICIAL (PUERTAS DE MORIA) */
         #cover {
             position: fixed;
             inset: 0;
@@ -220,7 +326,7 @@
             background: var(--color-card);
             border: 1px solid var(--color-card-border);
             border-radius: 20px;
-            padding: 40px 30px;
+            padding: 45px 35px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(12px);
             margin: 0 auto;
@@ -236,24 +342,6 @@
             font-size: 1.2rem;
             background: #080c14;
             padding: 0 12px;
-        }
-
-        /* ILUSTRACIÓN THEMATIC DE CADA SECCIÓN */
-        .section-illustration {
-            width: 190px;
-            height: 190px;
-            object-fit: cover;
-            border-radius: 14px;
-            border: 2px solid var(--color-gold);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.6), 0 0 15px rgba(229, 195, 101, 0.25);
-            margin: 0 auto 20px;
-            display: block;
-            background: #fff;
-            transition: transform 0.3s ease;
-        }
-        .section-illustration:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(229, 195, 101, 0.5);
         }
 
         /* HERO SECCIÓN */
@@ -572,12 +660,11 @@
         <source src="musica.m4a" type="audio/mp4">
     </audio>
 
-    <!-- 1. HERO / PRESENTACIÓN -->
-    <section id="hero" class="sheet">
+    <!-- 1. HERO / PRESENTACIÓN (FONDO: SECCIÓN 1) -->
+    <section id="hero" class="sheet" style="background-image: url('seccion_1_hero.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
             <div class="card-main" style="max-width: 740px;">
-                <img src="seccion_1_hero.jpg" class="section-illustration" alt="Arco Élfico de Bienvenida">
                 <p style="font-family: var(--font-subepic); letter-spacing: 4px; color: var(--color-silver); font-size: 0.85rem; margin-bottom: 10px;">
                     CON LA BENDICIÓN DE DIOS Y NUESTRAS FAMILIAS
                 </p>
@@ -586,14 +673,24 @@
                 <div class="hero-adventure">"De hecho... una aventura inesperada"</div>
             </div>
         </div>
+
+        <!-- TIP PARA VER LAS FOTOS EN PANTALLA COMPLETA -->
+        <div class="tap-hint" id="tapHint">
+            <div class="tap-hint-icon">
+                <i class="fas fa-hand-pointer"></i>
+            </div>
+            <strong>Tip para ver las fotos</strong>
+            <p>Toca cualquier hoja para ver solo la ilustración. Vuelve a tocar para ver la información.</p>
+            <button type="button" class="tap-hint-accept" id="tapHintAccept">Entendido</button>
+        </div>
     </section>
 
-    <!-- 2. MENSAJE / HISTORIA -->
-    <section id="s-story" class="sheet">
+    <!-- 2. MENSAJE / HISTORIA (FONDO: SECCIÓN 2) -->
+    <section id="s-story" class="sheet" style="background-image: url('seccion_2_historia.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
             <div class="card-main" style="max-width: 720px;">
-                <img src="seccion_2_historia.jpg" class="section-illustration" alt="Anillos Entrelazados con Hiedra y Rosas">
+                <i class="fas fa-ring" style="font-size: 2.2rem; color: var(--color-gold); margin-bottom: 15px;"></i>
                 <h2 class="font-script" style="color: var(--color-gold); font-size: 3.2rem; margin-bottom: 15px;">
                     ¡Nos Casamos!
                 </h2>
@@ -608,12 +705,11 @@
         </div>
     </section>
 
-    <!-- 3. PADRES -->
-    <section id="s-parents" class="sheet">
+    <!-- 3. PADRES (FONDO: SECCIÓN 3) -->
+    <section id="s-parents" class="sheet" style="background-image: url('seccion_3_padres.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
             <div class="card-main" style="max-width: 780px;">
-                <img src="seccion_3_padres.jpg" class="section-illustration" alt="Árboles Sagrados de la Familia">
                 <p style="font-family: var(--font-subepic); font-size: 0.9rem; letter-spacing: 3px; color: var(--color-silver); margin-bottom: 5px;">
                     CON EL AMOR Y BENDICIÓN DE
                 </p>
@@ -637,12 +733,11 @@
         </div>
     </section>
 
-    <!-- 4. COUNTDOWN Y CALENDARIO -->
-    <section id="s-countdown" class="sheet">
+    <!-- 4. COUNTDOWN Y CALENDARIO (FONDO: SECCIÓN 4) -->
+    <section id="s-countdown" class="sheet" style="background-image: url('seccion_4_countdown.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
             <div class="card-main" style="max-width: 720px;">
-                <img src="seccion_4_countdown.jpg" class="section-illustration" alt="Reloj Celestial Astrológico">
                 <h2 class="font-script" style="font-size: 3.6rem; color: var(--color-gold); margin-bottom: 5px;">
                     Falta muy poco...
                 </h2>
@@ -669,12 +764,11 @@
         </div>
     </section>
 
-    <!-- 5. CEREMONIA Y RECEPCIÓN -->
-    <section id="s-venue" class="sheet">
+    <!-- 5. CEREMONIA Y RECEPCIÓN (FONDO: SECCIÓN 5) -->
+    <section id="s-venue" class="sheet" style="background-image: url('seccion_5_ceremonia.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
             <div class="card-main" style="max-width: 800px;">
-                <img src="seccion_5_ceremonia.jpg" class="section-illustration" alt="Gazebo y Templo de Ceremonias">
                 <p style="font-family: var(--font-subepic); letter-spacing: 4px; font-size: 0.9rem; color: var(--color-silver); margin-bottom: 5px;">
                     DÓNDE Y CUÁNDO
                 </p>
@@ -712,12 +806,12 @@
         </div>
     </section>
 
-    <!-- 6. CÓDIGO DE VESTIMENTA -->
-    <section id="s-dresscode" class="sheet">
+    <!-- 6. CÓDIGO DE VESTIMENTA (FONDO: SECCIÓN 6) -->
+    <section id="s-dresscode" class="sheet" style="background-image: url('seccion_6_vestimenta.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
             <div class="card-main" style="max-width: 680px;">
-                <img src="seccion_6_vestimenta.jpg" class="section-illustration" alt="Broche Élfico y Trajes Formales">
+                <i class="fas fa-user-tie" style="font-size: 2.2rem; color: var(--color-gold); margin-bottom: 15px;"></i>
                 <h3 style="font-family: var(--font-subepic); font-size: 1.4rem; letter-spacing: 3px; color: var(--white); margin-bottom: 15px;">
                     CÓDIGO DE VESTIMENTA
                 </h3>
@@ -731,12 +825,12 @@
         </div>
     </section>
 
-    <!-- 7. MESA DE REGALOS -->
-    <section id="s-gifts" class="sheet">
+    <!-- 7. MESA DE REGALOS (FONDO: SECCIÓN 7) -->
+    <section id="s-gifts" class="sheet" style="background-image: url('seccion_7_regalos.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
             <div class="card-main" style="max-width: 780px;">
-                <img src="seccion_7_regalos.jpg" class="section-illustration" alt="Cofre Tallado y Sobre de Obsequios">
+                <i class="fas fa-gift" style="font-size: 2.2rem; color: var(--color-gold); margin-bottom: 15px;"></i>
                 <h2 class="font-script" style="color: var(--color-gold); font-size: 3.5rem; margin-bottom: 10px;">
                     Mesa de Regalos
                 </h2>
@@ -770,12 +864,12 @@
         </div>
     </section>
 
-    <!-- 8. CONFIRMACIÓN DE ASISTENCIA (RSVP) -->
-    <section id="s-rsvp" class="sheet">
+    <!-- 8. CONFIRMACIÓN DE ASISTENCIA (FONDO: SECCIÓN 8) -->
+    <section id="s-rsvp" class="sheet" style="background-image: url('seccion_8_rsvp.jpg');">
         <div class="veil"></div>
         <div class="content container fade-in">
             <div class="card-main rsvp-card">
-                <img src="seccion_8_rsvp.jpg" class="section-illustration" alt="Paloma Mensajera y Pluma de Caligrafía">
+                <i class="fas fa-envelope-circle-check" style="font-size: 2.2rem; color: var(--color-gold); margin-bottom: 15px;"></i>
                 <h2 class="font-title" style="color: var(--white); letter-spacing: 3px; font-size: 1.6rem; margin-bottom: 8px;">
                     CONFIRMAR ASISTENCIA
                 </h2>
@@ -836,7 +930,7 @@
     </section>
 
     <!-- 9. GALERÍA DE ARTES OFICIALES -->
-    <section id="s-gallery" class="sheet">
+    <section id="s-gallery" class="sheet" style="background-image: url('arte_fecha_aventura.jpeg');">
         <div class="veil"></div>
         <div class="content container fade-in">
             <h2 class="font-script" style="font-size: 3.8rem; color: var(--color-gold); margin-bottom: 5px;">
@@ -1018,7 +1112,7 @@
             window.location.href = mailtoUrl;
         };
 
-        // COUNTDOWN Y EVENTOS AL CARGAR
+        // INICIALIZACIÓN
         document.addEventListener('DOMContentLoaded', () => {
             // COUNTDOWN
             const countdownInterval = setInterval(function() {
@@ -1050,6 +1144,40 @@
                     }
                 }
             }, 1000);
+
+            // GESTIÓN DEL TIP DE INSTRUCCIÓN (SE GUARDA EN LOCALSTORAGE PARA NO REPETIRLO)
+            const tapHint = document.getElementById('tapHint');
+            const tapHintAccept = document.getElementById('tapHintAccept');
+            const tapHintKey = 'luz-emmanuel-tap-hint-v1';
+            let hintSeen = false;
+            try {
+                hintSeen = localStorage.getItem(tapHintKey) === '1';
+            } catch(e) {}
+
+            if (tapHint) {
+                if (hintSeen) {
+                    tapHint.remove();
+                } else {
+                    const closeTip = (e) => {
+                        if (e) e.stopPropagation();
+                        tapHint.classList.add('is-hidden');
+                        setTimeout(() => tapHint.remove(), 450);
+                        try {
+                            localStorage.setItem(tapHintKey, '1');
+                        } catch(e) {}
+                    };
+                    if (tapHintAccept) tapHintAccept.addEventListener('click', closeTip);
+                }
+            }
+
+            // FUNCIÓN: TOCAR CUALQUIER HOJA PARA VER SOLO LA IMAGEN DE FONDO
+            const interactiveSelector = 'a, button, input, textarea, select, label, .gallery-img, .lightbox, .lightbox-close, .tap-hint, .music-toggle';
+            document.querySelectorAll('.sheet').forEach(sheet => {
+                sheet.addEventListener('click', (event) => {
+                    if (event.target.closest(interactiveSelector)) return;
+                    sheet.classList.toggle('image-only');
+                });
+            });
 
             // LIGHTBOX PARA GALERÍA
             const lightbox = document.getElementById('lightbox');
